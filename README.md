@@ -1,7 +1,7 @@
 # 🏢 Arnold Enterprise - Plataforma Web Corporativa & Panel Administrativo
 
 > **Prueba Técnica – Ingeniero de Software Full Stack**  
-> **Candidato / Autor:** Migue Cordova  
+> **Candidato:** Migue Cordova  
 
 ---
 
@@ -114,7 +114,26 @@ Para evaluar el **Ejercicio 4 (Panel Administrativo)** y **Ejercicio 5 (Segurida
 
 ---
 
-## 📝 7. Sustentación Técnica
+## 📸 7. Evidencias del Funcionamiento (Capturas del Sistema)
+
+### 1. Página Principal (Hero Section)
+![Página Principal - Hero Section](docs/herosection.png)
+
+### 2. Información Corporativa y Liderazgo (Nosotros)
+![Información Corporativa](docs/about.png)
+
+### 3. Catálogo de Servicios Especializados
+![Catálogo de Servicios](docs/services.png)
+
+### 4. Formulario de Contacto y Solicitudes
+![Formulario de Contacto](docs/contacto.png)
+
+### 5. Panel Administrativo (Dashboard de Gestión de Solicitudes)
+![Panel Administrativo](docs/admin.png)
+
+---
+
+## 📝 8. Sustentación Técnica
 Las respuestas detalladas a las 15 preguntas de sustentación requeridas por el comité de evaluación se encuentran documentadas en:
 👉 [`docs/preguntas_sustentacion.md`](docs/preguntas_sustentacion.md)
 
