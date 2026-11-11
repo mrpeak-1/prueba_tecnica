@@ -1,7 +1,7 @@
 # 🏢 Arnold Enterprise - Plataforma Web Corporativa & Panel Administrativo
 
 > **Prueba Técnica – Ingeniero de Software Full Stack**  
-> **Candidato:** Migue Cordova  
+> **Candidato / Autor:** Migue Cordova  
 
 ---
 
