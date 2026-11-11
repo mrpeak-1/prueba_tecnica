@@ -1,5 +1,5 @@
 import React from 'react';
-import { Building2, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Building2, ShieldCheck } from 'lucide-react';
 
 export default function Footer({ onOpenAdminModal }) {
   return (
@@ -37,7 +37,7 @@ export default function Footer({ onOpenAdminModal }) {
             </ul>
           </div>
 
-          {/* Gestión y Acceso */}
+          {/* Gestión y Acceso con botón flash */}
           <div className="space-y-4">
             <h4 className="text-xs font-bold text-white uppercase tracking-widest">Acceso Administrativo</h4>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed font-normal">
@@ -45,10 +45,10 @@ export default function Footer({ onOpenAdminModal }) {
             </p>
             <button
               onClick={onOpenAdminModal}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs sm:text-sm font-bold border border-slate-800 hover:border-slate-700 transition-all shadow-md group"
+              className="btn-flash inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs sm:text-sm font-bold border border-slate-800 hover:border-slate-700 transition-all shadow-md group"
             >
               <ShieldCheck className="w-4 h-4 text-blue-400 group-hover:scale-110 transition-transform" />
-              Ingresar al Panel Administrativo
+              <span>Ingresar al Panel Administrativo</span>
             </button>
           </div>
 

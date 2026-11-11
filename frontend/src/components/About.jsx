@@ -60,7 +60,7 @@ export default function About() {
           })}
         </div>
 
-        {/* Banner institucional del equipo */}
+        {/* Banner institucional del equipo con botón flash */}
         <div className="mt-20 bg-gradient-to-r from-slate-950 via-slate-900 to-indigo-950 rounded-3xl p-8 sm:p-14 text-white shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 border border-slate-800">
           <div className="space-y-3 text-center md:text-left">
             <span className="text-blue-400 font-bold text-xs tracking-widest uppercase">Liderazgo & Talento</span>
@@ -72,9 +72,9 @@ export default function About() {
           <div className="flex-shrink-0">
             <a
               href="#contacto"
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl text-sm transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5"
+              className="btn-flash px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-2xl text-sm transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:-translate-y-0.5 inline-block"
             >
-              Contactar al Equipo
+              <span>Contactar al Equipo</span>
             </a>
           </div>
         </div>

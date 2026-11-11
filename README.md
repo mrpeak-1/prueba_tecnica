@@ -1,8 +1,7 @@
 # 🏢 Arnold Enterprise - Plataforma Web Corporativa & Panel Administrativo
 
 > **Prueba Técnica – Ingeniero de Software Full Stack**  
-> **Candidato / Autor:** Migue Cordova  
-> **Puntaje Objetivo:** 100 / 100 Puntos  
+> **Candidato:** Migue Cordova  
 
 ---
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Building2, Menu, X, Phone, Mail, ChevronRight, Lock, ArrowUpRight } from 'lucide-react';
+import { Building2, Menu, X, Lock } from 'lucide-react';
 
 export default function Navbar({ onOpenAdminModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -40,20 +40,20 @@ export default function Navbar({ onOpenAdminModal }) {
             ))}
           </nav>
 
-          {/* Acciones */}
+          {/* Acciones con efecto flash */}
           <div className="hidden md:flex items-center gap-4">
             <a
               href="#contacto"
-              className="px-5 py-2.5 text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all hover:shadow-sm"
+              className="btn-flash px-5 py-2.5 text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-all hover:shadow-sm"
             >
-              Solicitar Cotización
+              <span>Solicitar Cotización</span>
             </a>
             <button
               onClick={onOpenAdminModal}
-              className="px-5 py-2.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
+              className="btn-flash px-5 py-2.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-md shadow-blue-500/25 hover:shadow-lg hover:shadow-blue-500/35 hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-2"
             >
               <Lock className="w-4 h-4" />
-              Panel Admin
+              <span>Panel Admin</span>
             </button>
           </div>
 
@@ -86,19 +86,19 @@ export default function Navbar({ onOpenAdminModal }) {
             <a
               href="#contacto"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center px-4 py-3 text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
+              className="btn-flash w-full text-center px-4 py-3 text-sm font-bold text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors"
             >
-              Solicitar Cotización
+              <span>Solicitar Cotización</span>
             </a>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenAdminModal();
               }}
-              className="w-full text-center px-4 py-3 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center justify-center gap-2 shadow-md shadow-blue-500/25 transition-all"
+              className="btn-flash w-full text-center px-4 py-3 text-sm font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl flex items-center justify-center gap-2 shadow-md shadow-blue-500/25 transition-all"
             >
               <Lock className="w-4 h-4" />
-              Acceso Administrativo
+              <span>Acceso Administrativo</span>
             </button>
           </div>
         </div>

@@ -24,3 +24,91 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+/* ========================================================
+   EFECTO 1: FLASH / RAYO DE LUZ SHIMMER EN BOTONES
+   Se activa al hacer hover y de manera cíclica cada 4 segundos
+======================================================== */
+.btn-flash {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-flash::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0) 80%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  pointer-events: none;
+  animation: flashSweep 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+.btn-flash:hover::after {
+  animation: flashSweepHover 0.75s ease-in-out;
+}
+
+@keyframes flashSweep {
+  0% {
+    left: -150%;
+  }
+  25% {
+    left: 200%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+@keyframes flashSweepHover {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+/* ========================================================
+   EFECTO 2: GRADIENTE ANIMADO FLUIDO (AURORA SHIMMER)
+   Para el texto destacado del Hero
+======================================================== */
+.text-aurora-shimmer {
+  background: linear-gradient(
+    120deg,
+    #2563eb 0%,
+    #4f46e5 25%,
+    #06b6d4 50%,
+    #3b82f6 75%,
+    #2563eb 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: auroraShimmer 5s ease-in-out infinite alternate;
+}
+
+@keyframes auroraShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

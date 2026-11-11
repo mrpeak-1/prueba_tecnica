@@ -142,7 +142,7 @@ export default function Contact() {
             </div>
           </div>
 
-          {/* Formulario Interactivo */}
+          {/* Formulario Interactivo con Botón Flash */}
           <div className="lg:col-span-7 bg-white rounded-3xl border border-slate-200/90 shadow-2xl p-8 sm:p-12 transition-all hover:shadow-blue-500/10">
             <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-2">Registrar Solicitud</h3>
             <p className="text-sm sm:text-base text-slate-500 mb-8 font-normal">Por favor proporcione los datos solicitados para generar su requerimiento formal.</p>
@@ -235,14 +235,14 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 px-6 rounded-2xl bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/35 flex items-center justify-center gap-3 transition-all disabled:opacity-50"
+                className="btn-flash w-full py-4 px-6 rounded-2xl bg-blue-600 hover:bg-blue-700 active:scale-[0.99] text-white font-bold text-base shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/35 flex items-center justify-center gap-3 transition-all disabled:opacity-50"
               >
                 {loading ? (
                   <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent" />
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    Enviar Solicitud Corporativa
+                    <span>Enviar Solicitud Corporativa</span>
                   </>
                 )}
               </button>

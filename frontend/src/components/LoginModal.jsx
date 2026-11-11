@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { api } from '../api';
-import { Lock, Mail, Key, AlertCircle, X, ShieldCheck, Play, Sparkles } from 'lucide-react';
+import { Lock, Mail, Key, AlertCircle, X, Sparkles } from 'lucide-react';
 
 export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
   const [correo, setCorreo] = useState('');
@@ -10,7 +10,6 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
   const [error, setError] = useState(null);
   const isTypingRef = useRef(false);
 
-  // Cerrar con la tecla ESC
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') {
@@ -25,7 +24,6 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
     };
   }, [isOpen, onClose]);
 
-  // Limpiar campos al abrir
   useEffect(() => {
     if (isOpen) {
       setCorreo('');
@@ -63,7 +61,6 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
     performLogin(correo, password);
   };
 
-  // Simulación de tipeo interactivo automático y posterior login
   const handleAutoTypeAndLogin = () => {
     if (isAutoTyping || loading) return;
 
@@ -88,7 +85,6 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
       } else {
         clearInterval(typeEmailInterval);
 
-        // Pequeña pausa antes de escribir la contraseña
         setTimeout(() => {
           if (!isTypingRef.current) return;
           let passIndex = 0;
@@ -103,7 +99,6 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
             } else {
               clearInterval(typePassInterval);
               setIsAutoTyping(false);
-              // Iniciar sesión automáticamente
               setTimeout(() => {
                 performLogin(targetEmail, targetPass);
               }, 400);
@@ -144,12 +139,12 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
           <p className="text-xs text-slate-500 mt-1">Gestión corporativa Arnold Enterprise</p>
         </div>
 
-        {/* Botón de Autologin con efecto de tipeo suave */}
+        {/* Botón de Autologin con efecto Flash */}
         <button
           type="button"
           onClick={handleAutoTypeAndLogin}
           disabled={isAutoTyping || loading}
-          className="w-full mb-6 py-2.5 px-4 bg-gradient-to-r from-blue-500 via-indigo-600 to-blue-700 hover:from-blue-600 hover:to-indigo-700 text-white rounded-xl text-xs font-bold shadow-md shadow-blue-500/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 group active:scale-[0.98] disabled:opacity-70"
+          className="btn-flash w-full mb-6 py-3 px-4 bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-2xl text-xs font-bold shadow-md shadow-blue-500/20 hover:shadow-lg transition-all flex items-center justify-center gap-2 group active:scale-[0.98] disabled:opacity-70"
         >
           {isAutoTyping ? (
             <>
@@ -211,12 +206,12 @@ export default function LoginModal({ isOpen, onClose, onLoginSuccess }) {
           <button
             type="submit"
             disabled={loading || isAutoTyping}
-            className="w-full mt-2 py-3 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
+            className="btn-flash w-full mt-2 py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50"
           >
             {loading ? (
               <div className="animate-spin rounded-full h-4 w-4 border-2 border-white border-t-transparent" />
             ) : (
-              'Iniciar Sesión Manual'
+              <span>Iniciar Sesión Manual</span>
             )}
           </button>
         </form>
