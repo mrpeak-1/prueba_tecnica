@@ -37,15 +37,15 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="servicios" className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="servicios" className="py-24 lg:py-32 bg-slate-50/60 w-full">
+      <div className="w-full px-6 sm:px-10 lg:px-16">
         
         {/* Cabecera */}
-        <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-3 py-1 rounded-full">
+        <div className="max-w-3xl mx-auto text-center space-y-4 mb-20">
+          <span className="text-xs font-bold uppercase tracking-wider text-blue-600 bg-blue-100/70 px-3.5 py-1.5 rounded-full border border-blue-200/50">
             Catálogo Corporativo
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
             Nuestros Servicios Especializados
           </h2>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
@@ -55,45 +55,45 @@ export default function Services() {
 
         {/* Estado de Carga */}
         {loading && (
-          <div className="flex justify-center items-center py-16">
-            <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-600"></div>
+          <div className="flex justify-center items-center py-20">
+            <div className="animate-spin rounded-full h-12 w-12 border-4 border-blue-200 border-t-blue-600"></div>
           </div>
         )}
 
         {/* Estado de Error */}
         {error && (
-          <div className="max-w-md mx-auto p-4 bg-red-50 text-red-700 rounded-xl text-center text-sm border border-red-200">
+          <div className="max-w-md mx-auto p-4 bg-red-50 text-red-700 rounded-2xl text-center text-sm border border-red-200">
             {error}
           </div>
         )}
 
-        {/* Grid de Servicios */}
+        {/* Grid de Servicios a Ancho Completo */}
         {!loading && !error && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {services.map((service) => {
               const IconComponent = iconMap[service.icono] || Briefcase;
               return (
                 <div
                   key={service.id}
-                  className="bg-white rounded-2xl p-8 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-blue-500/40 transition-all flex flex-col justify-between group"
+                  className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-2xl hover:border-blue-500/40 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group cursor-default"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                      <IconComponent className="w-6 h-6" />
+                    <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-sm">
+                      <IconComponent className="w-7 h-7" />
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
                       {service.nombre}
                     </h3>
-                    <p className="text-sm text-slate-600 leading-relaxed">
+                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal">
                       {service.descripcion}
                     </p>
                   </div>
 
-                  <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-600">
-                    <span>Solución Enterprise</span>
+                  <div className="pt-6 mt-8 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-blue-600">
+                    <span className="uppercase tracking-wider text-[11px] text-slate-400">Solución Enterprise</span>
                     <a
                       href="#contacto"
-                      className="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                      className="inline-flex items-center gap-1.5 group-hover:translate-x-1 transition-transform"
                     >
                       Consultar <ArrowUpRight className="w-4 h-4" />
                     </a>

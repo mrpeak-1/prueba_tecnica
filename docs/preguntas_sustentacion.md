@@ -140,3 +140,4 @@ Consta de tres partes codificadas en Base64Url separadas por puntos:
    - Desplegar la API en **Render, Railway o AWS ECS / Elastic Beanstalk**.
    - Conectar el backend a una base de datos relacional administrada (como **AWS RDS PostgreSQL** o **Supabase**), aplicando las migraciones del `database/schema.sql`.
 4. **Infraestructura como Código & CI/CD:** Configurar **GitHub Actions** para que ante cada push a la rama `main` se ejecuten los linters, tests automáticos y el despliegue sin tiempo de inactividad (*zero-downtime rolling deployment*).
+
